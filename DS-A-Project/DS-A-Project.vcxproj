@@ -127,11 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Deck.cpp" />
     <ClCompile Include="headerImplementation.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PokeMen.cpp" />
+    <ClCompile Include="PokeStack.cpp" />
+    <ClCompile Include="search.cpp" />
+    <ClCompile Include="sort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="names.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,16 +1,19 @@
-/* Method Implementations*/
+/*  Method Implementations  */
 
 #include "header.h"
 
-/* Implementation of Base Card methods*/
-PokeMen::PokeMen(int health, int defenseValue, int baseDamageValue, int specialDamageValue) 
-{
-	healthPoints = health;
-	defenseStrength = defenseValue;
-	baseDamage= baseDamageValue;
-	specialDamage = specialDamageValue;
+
+
+/*  Implentation of Node Class  */
+node::node(PokeMen d){
+	data = d;
+	next = NULL;
+	prev = NULL;
 }
-void PokeMen::writeStats(ostream& out) {
-	cout << " hp = " << healthPoints << "defenseValue = " << defenseStrength<< "base damage = " << baseDamage << "special damage = " << specialDamage << endl;
-}
-/* Implementation of special type methods*/
+
+
+/*  Implementation of Deck Class  */
+
+
+
+/*  Implementation of PokeStack Class  */
