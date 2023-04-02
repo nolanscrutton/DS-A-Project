@@ -44,7 +44,7 @@ int main(void) {
 		}
 		if (ch == 't') {
 			cout << "stats" << endl;
-			cin >> health >> defense >> damage;
+			cin >> name >> health >> defense >> damage;
 			ThermalType p(name, health, defense, damage);
 
 			p.thermalSpecial();
@@ -53,7 +53,7 @@ int main(void) {
 		}
 		if (ch == 'k') {
 			cout << "stats" << endl;
-			cin >> health >> defense >> damage;
+			cin >> name >> health >> defense >> damage;
 			BrickType p(name, health, defense, damage);
 
 			p.brickSpecial();
