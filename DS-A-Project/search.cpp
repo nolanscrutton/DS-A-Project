@@ -1,7 +1,7 @@
 #include "header.h"
 
 
-
+//string search needs to be converted to template to handle all sorting 
 void Deck::search(string searchingName) {
 	int i = size();
 	string temp;
@@ -12,13 +12,18 @@ void Deck::search(string searchingName) {
 		
 		temp = ptr->data.name;
 		i++;
-		if (temp.compare(searchingName) == 0) {
-			cout << "Object found at node #" << size()-i << endl;
+		if (temp == searchingName) {
+			cout << "Object found at node #" << i << endl;
 			break;
+		}
+		if (ptr->next == NULL)
+		{
+			cout << "Not found in deck" << endl;
+			return;
 		}
 		
 	}
 
 	ptr->data.writeStats(cout);
-
 }
+

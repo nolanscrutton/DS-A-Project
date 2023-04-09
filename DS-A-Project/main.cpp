@@ -27,11 +27,22 @@ int main(void) {
 		cin >> ch;
 
 		if (ch == 'b') {
+			/*
 			cout << "input stats" << endl;
 			cin >> name >>  health >> defense >> damage;
 			PokeMen p(name, health, defense, damage);
 			
 			myDeck.add(p);
+			*/
+			PokeMen test4("Test4", 2, 10, 10);
+			myDeck.add(test4);
+			PokeMen test3("Test3", 3, 10, 10);
+			myDeck.add(test3);
+			PokeMen test2("Test2", 5, 10, 10);
+			myDeck.add(test2);
+			PokeMen test1("Test1", 10, 10, 10);
+			myDeck.add(test1);
+
 		}
 		if (ch == 'm') {
 			cout << "stats" << endl;
@@ -94,6 +105,10 @@ int main(void) {
 			cin >> searchingName;
 			
 			myDeck.search(searchingName);
+		}
+		if (ch == 'g')
+		{
+			myDeck.sort('1');
 		}
 	}
 
