@@ -62,10 +62,6 @@ int Deck::size() const {
 	return count;
 }
 
-void Deck::sort(int type) {
-
-}
-
 void Deck::del() {
 	for (int i = 0; i <= size(); i++) {
 		remove();

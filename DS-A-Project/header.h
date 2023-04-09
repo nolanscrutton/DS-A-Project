@@ -83,9 +83,10 @@ public:
 	void display(ostream& out) const;
 	bool empty() const;
 	int size(void) const;
-	void sort(int type);
+	void sort(char type);
 	void del();
 	void search(string searchingName);
+	void swap(node* ptr1, node* ptr2);
 };
 
 class PokeStack
