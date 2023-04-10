@@ -103,7 +103,6 @@ int main(void) {
 			myDeck.sort(sortType);
 		}
 		if (ch == 'r') {
-			node* m;
 			int seed1 = rand() % 3, seed2 = rand() % 10, seed3 = rand() % 10;
 			int hp = rand() % 500, ds = rand() % 500, bd = rand() % 500;
 			switch (seed1) {
