@@ -3,7 +3,6 @@
 void Deck::sort(char type) {
 	if (type == ('h' | 'H')) {
 		int i;
-		node* ptr;
 		node* p1;
 		node* p2;
 
@@ -25,7 +24,6 @@ void Deck::sort(char type) {
 	}
 	else if (type == ('d' | 'D')) {
 		int i;
-		node* ptr;
 		node* p1;
 		node* p2;
 
@@ -47,7 +45,6 @@ void Deck::sort(char type) {
 	}
 	else if (type == ('e' | 'E')) {
 		int i;
-		node* ptr;
 		node* p1;
 		node* p2;
 
@@ -69,7 +66,6 @@ void Deck::sort(char type) {
 	}
 	else if (type == ('n' | 'N')) {
 		int i;
-		node* ptr;
 		node* p1;
 		node* p2;
 

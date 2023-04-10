@@ -24,7 +24,6 @@ int Deck::search(string searchingName, bool print) {
 		}
 		
 	}
-
 	return 1;
 }
 
