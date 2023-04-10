@@ -14,34 +14,39 @@ int main(void) {
 	printLogo(1);
 
 	while(true) {
-		cout <<endl << "Hit b to add a base to the deck" << endl;
-		cout << "Hit m to add a moist to the deck" << endl;
-		cout << "Hit t to add a thermal to the deck" << endl;
-		cout << "his k to add a brick to the deck" << endl;
-
-		cout << "Hit 2 to display the deck" << endl;
-		cout << "Hit 3 to test base class" << endl;
-		cout << "Hit r to remove a something for somewhere idk man" << endl;
-		cout << "Hit c to count" << endl;
-		cout << "Hit s to search" << endl;
+		cout << endl << "[---------------------------------------] " << endl;
+		cout << "| Hit b to add a base to the deck       |" << endl;
+		cout << "| Hit m to add a moist to the deck      |" << endl;
+		cout << "| Hit t to add a thermal to the deck    |" << endl;
+		cout << "| Hit k to add a brick to the deck      |" << endl;
+		cout << "| Hit d to display the deck             |" << endl;
+		cout << "| Hit 3 to test base class              |" << endl;
+		cout << "| Hit r to remove a PokeMan             |" << endl;
+		cout << "| Hit n for number of PokeMen in deck   |" << endl;
+		cout << "| Hit s to search                       |" << endl;
+		cout << "| Hit g to sort deck                    |" << endl;
+		cout << "| Hit c to clear deck                   |" << endl;
+		cout << "[---------------------------------------]" << endl << endl;
 
 		cin >> ch;
 
 		if (ch == 'b') {
-			/*
-			cout << "input stats" << endl;
+			
+			/*cout << "input stats" << endl;
 			cin >> name >>  health >> defense >> damage;
 			PokeMen p(name, health, defense, damage);
 			
-			myDeck.add(p);
-			*/
-			PokeMen test4("Test4", 2, 7, 4);
+
+			myDeck.add(p);*/
+			
+			PokeMen test4("fargus", 1, 11, 6);
 			myDeck.add(test4);
-			PokeMen test3("Test3", 3, 2, 15);
+			PokeMen test3("dungus", 4, 5, 3);
 			myDeck.add(test3);
-			PokeMen test2("Test2", 5, 24, 1);
+			PokeMen test2("garbonzo", 7, 8, 12);
 			myDeck.add(test2);
-			PokeMen test1("Test1", 10, 1, 10);
+			PokeMen test1("zamn", 10, 2, 9);
+
 			myDeck.add(test1);
 
 		}
@@ -82,7 +87,7 @@ int main(void) {
 			}
 		}
 
-		if (ch == '2') {
+		if (ch == 'd') {
 			myDeck.display(cout);
 		}
 
@@ -91,10 +96,10 @@ int main(void) {
 			x.moistSpecial();
 			x.writeStats(cout);
 		}
-		if (ch == 'c') {
+		if (ch == 'n') {
 			cout << "There are " << myDeck.size() << " PokeMen in your deck" << endl;
 		}
-		if (ch == 'd') {
+		if (ch == 'c') {
 			myDeck.del();
 		}
 
@@ -102,6 +107,10 @@ int main(void) {
 			string searchingName;
 
 			cout << "Enter the name of the object you'd like to find" << endl;
+			cout << endl << "[---------------------------------------] " << endl;
+			cout << "| Enter the name of the object you'd    |" << endl;
+			cout << "| like to find                          |" << endl;
+			cout << "[---------------------------------------]" << endl << endl;
 
 			cin >> searchingName;
 			
@@ -109,13 +118,17 @@ int main(void) {
 		}
 		if (ch == 'g')
 		{
-			cout << "Press N to sort by name" << endl;
-			cout << "Press A to sort by attack" << endl;
-			cout << "Press H to sort by health points" << endl;
-			cout << "Press D to sort by defence" << endl << endl;
-			cout << "What would you like to sort by?" << endl;
+
+			cout << endl << "[---------------------------------------] " << endl;
+			cout << "| Choose a statistic to sort by:        |" << endl;
+			cout << "| h = sort by health                    |" << endl;
+			cout << "| e = sort by defense                   |" << endl;
+			cout << "| d = sort by damage                    |" << endl;
+			cout << "| n = sort by name                      |" << endl;
+			cout << "[---------------------------------------]" << endl << endl;
+
 			cin >> sortType;
-			cout << endl << sortType;
+
 			myDeck.sort(sortType);
 		}
 	}

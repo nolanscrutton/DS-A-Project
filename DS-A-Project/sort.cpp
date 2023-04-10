@@ -1,14 +1,12 @@
 #include "header.h"
 
 void Deck::sort(char type) {
+	if (type == ('h' | 'H')) {
+		int i;
+		node* ptr;
+		node* p1;
+		node* p2;
 
-	int i;
-	node* ptr;
-	node* p1;
-	node* p2;
-
-	switch (type) {
-	case 'h':		//sort by health points
 		for (i = 0; i < size(); i++)
 		{
 			p1 = start;
@@ -24,45 +22,13 @@ void Deck::sort(char type) {
 				}
 			}
 		}
-		break;
+	}
+	else if (type == ('d' | 'D')) {
+		int i;
+		node* ptr;
+		node* p1;
+		node* p2;
 
-	case 'n':		//sort by name
-		for (i = 0; i < size(); i++)
-		{
-			p1 = start;
-			p2 = p1->next;
-			while (p1->next != NULL) {
-				if (p1->data.name > p2->data.name) {
-					swap(p1, p2);
-					p2 = p1->next;
-				}
-				else {
-					p1 = p2;
-					p2 = p2->next;
-				}
-			}
-		}
-		break;
-
-	case 'd':		//sort by defence
-		for (i = 0; i < size(); i++)
-		{
-			p1 = start;
-			p2 = p1->next;
-			while (p1->next != NULL) {
-				if (p1->data.defenseStrength > p2->data.defenseStrength) {
-					swap(p1, p2);
-					p2 = p1->next;
-				}
-				else {
-					p1 = p2;
-					p2 = p2->next;
-				}
-			}
-		}
-		break;
-
-	case 'a':		//sort by attack
 		for (i = 0; i < size(); i++)
 		{
 			p1 = start;
@@ -78,10 +44,54 @@ void Deck::sort(char type) {
 				}
 			}
 		}
-		break;
+	}
+	else if (type == ('e' | 'E')) {
+		int i;
+		node* ptr;
+		node* p1;
+		node* p2;
 
-	default:
-		cout << "Not a valid input! No sorting performed." << endl;
+		for (i = 0; i < size(); i++)
+		{
+			p1 = start;
+			p2 = p1->next;
+			while (p1->next != NULL) {
+				if (p1->data.defenseStrength > p2->data.defenseStrength) {
+					swap(p1, p2);
+					p2 = p1->next;
+				}
+				else {
+					p1 = p2;
+					p2 = p2->next;
+				}
+			}
+		}
+	}
+	else if (type == ('n' | 'N')) {
+		int i;
+		node* ptr;
+		node* p1;
+		node* p2;
+
+		for (i = 0; i < size(); i++)
+		{
+			p1 = start;
+			p2 = p1->next;
+			while (p1->next != NULL) {
+				if (p1->data.name > p2->data.name) {
+					swap(p1, p2);
+					p2 = p1->next;
+				}
+				else {
+					p1 = p2;
+					p2 = p2->next;
+				}
+			}
+		}
+	}else{
+		cout << endl << "[---------------------------------------] " << endl;
+		cout << "| Invalid Type Entered!                 |" << endl;
+		cout << "[---------------------------------------]" << endl << endl;
 	}
 }
 

@@ -22,24 +22,25 @@ void Deck::add(PokeMen data) {
 }
 
 void Deck::remove() {
-	if (count == 1) {
-		delete tail;
-		start = tail = NULL;
+	if (count > 0) {
+		node* ptr = start;
+		start = start->next;
 		count--;
+		delete ptr;
 	}
 	else {
-		node* ptr = tail->prev;
-		ptr->next = NULL;
-		delete tail;
-		tail = ptr;
-		count--;
+		cout << endl << "[---------------------------------------] " << endl;
+		cout << "| The PokeDeck is empty                 |" << endl;
+		cout << "[---------------------------------------]" << endl << endl;
 	}
 }
 
 void Deck::display(ostream& out) const {
 
 	if (count == 0) {
-		out << "The Deck has no PokeMen" << endl;
+		out << endl << "[---------------------------------------] " << endl;
+		out << "| The Deck has no PokeMen               |" << endl;
+		out << "[---------------------------------------]" << endl << endl;
 	}
 	else {
 		int i = 0;
@@ -63,9 +64,16 @@ int Deck::size() const {
 }
 
 void Deck::del() {
-	for (int i = 0; i <= size(); i++) {
-		remove();
+	
+	int temp = count;
+	if (count == 0) {
+		cout << endl << "[---------------------------------------] " << endl;
+		cout << "| The PokeDeck is empty                 |" << endl;
+		cout << "[---------------------------------------]" << endl << endl;
 	}
-
-	cout << "All Pokemen have been successfully removed from the Deck." << endl;
+	else {
+		for (int i = 0; i <= temp; i++) {
+			remove();
+		}
+	}
 }
