@@ -2,7 +2,7 @@
 
 
 //string search needs to be converted to template to handle all sorting 
-void Deck::search(string searchingName) {
+int Deck::search(string searchingName, bool print) {
 	int i = size();
 	string temp;
 
@@ -13,17 +13,18 @@ void Deck::search(string searchingName) {
 		temp = ptr->data.name;
 		i++;
 		if (temp == searchingName) {
-			cout << "Object found at node #" << i << endl;
+			//cout << "Object found at node #" << i << endl;
+			if(print) ptr->data.writeStats(cout);
 			break;
 		}
 		if (ptr->next == NULL)
 		{
-			cout << "Not found in deck" << endl;
-			return;
+			if(print) cout << "Not found in deck" << endl;
+			return 0;
 		}
 		
 	}
 
-	ptr->data.writeStats(cout);
+	return 1;
 }
 

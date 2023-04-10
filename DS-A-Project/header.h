@@ -4,6 +4,7 @@
 #include <random>
 #include <time.h>
 #include <string>
+#include <ctime>
 
 using namespace std;
 
@@ -85,7 +86,7 @@ public:
 	int size(void) const;
 	void sort(char type);
 	void del();
-	void search(string searchingName);
+	int search(string searchingName, bool print = 1);
 	void swap(node* ptr1, node* ptr2);
 };
 
