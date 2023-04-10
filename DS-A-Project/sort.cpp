@@ -7,20 +7,81 @@ void Deck::sort(char type) {
 	node* p1;
 	node* p2;
 
-	for (i = 0; i < size(); i++)
-	{
-		p1 = start;
-		p2 = p1->next;
-		while (p1->next != NULL) {
-			if (p1->data.healthPoints > p2->data.healthPoints) {
-				swap(p1, p2);
-				p2 = p1->next;
-			}
-			else {
-				p1 = p2;
-				p2 = p2->next;
+	switch (type) {
+	case 'h':		//sort by health points
+		for (i = 0; i < size(); i++)
+		{
+			p1 = start;
+			p2 = p1->next;
+			while (p1->next != NULL) {
+				if (p1->data.healthPoints > p2->data.healthPoints) {
+					swap(p1, p2);
+					p2 = p1->next;
+				}
+				else {
+					p1 = p2;
+					p2 = p2->next;
+				}
 			}
 		}
+		break;
+
+	case 'n':		//sort by name
+		for (i = 0; i < size(); i++)
+		{
+			p1 = start;
+			p2 = p1->next;
+			while (p1->next != NULL) {
+				if (p1->data.name > p2->data.name) {
+					swap(p1, p2);
+					p2 = p1->next;
+				}
+				else {
+					p1 = p2;
+					p2 = p2->next;
+				}
+			}
+		}
+		break;
+
+	case 'd':		//sort by defence
+		for (i = 0; i < size(); i++)
+		{
+			p1 = start;
+			p2 = p1->next;
+			while (p1->next != NULL) {
+				if (p1->data.defenseStrength > p2->data.defenseStrength) {
+					swap(p1, p2);
+					p2 = p1->next;
+				}
+				else {
+					p1 = p2;
+					p2 = p2->next;
+				}
+			}
+		}
+		break;
+
+	case 'a':		//sort by attack
+		for (i = 0; i < size(); i++)
+		{
+			p1 = start;
+			p2 = p1->next;
+			while (p1->next != NULL) {
+				if (p1->data.baseDamage > p2->data.baseDamage) {
+					swap(p1, p2);
+					p2 = p1->next;
+				}
+				else {
+					p1 = p2;
+					p2 = p2->next;
+				}
+			}
+		}
+		break;
+
+	default:
+		cout << "Not a valid input! No sorting performed." << endl;
 	}
 }
 
