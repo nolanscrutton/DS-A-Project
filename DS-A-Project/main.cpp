@@ -9,9 +9,15 @@ int main(void) {
 	char ch;
 	int health, defense, damage;
 	string name;
-	char sortType;
+
+	srand((unsigned)time(NULL));
 
 	printLogo(1);
+
+	string waterPref[7] = { "moist", "wet", "viscous", "laminar", "gushy", "liquid", "gooey", };
+	string firePref[7] = { "pyro", "fire", "solar", "magma", "lava", "plasma", "burner" };
+	string brickPref[7] = { "rock", "brick", "granite", "sedimentary", "metamorphic", "cement", "dirt" };
+	string suf[7] = { "man", "ball", "box", "beast", "dog", "rhino", "tree" };
 
 	while(true) {
 		cout << endl << "[---------------------------------------] " << endl;
@@ -113,8 +119,7 @@ int main(void) {
 			cout << "[---------------------------------------]" << endl << endl;
 
 			cin >> searchingName;
-			
-			myDeck.search(searchingName);
+			myDeck.search(searchingName); 
 		}
 		if (ch == 'g')
 		{
@@ -130,6 +135,49 @@ int main(void) {
 			cin >> sortType;
 
 			myDeck.sort(sortType);
+		}
+		if (ch == 'v') {
+			node* m;
+			int seed1 = rand() % 3, seed2 = rand() % 7, seed3 = rand() % 7;
+			int hp = rand() % 500, ds = rand() % 500, bd = rand() % 500;
+			switch (seed1) {
+			case 0:
+			{
+				name = waterPref[seed2] + suf[seed3];
+				if (myDeck.search(name, 0) && !myDeck.empty()) {
+					cout << "You've already captured " << name << endl;
+					break;
+				}
+				MoistType t(name, hp, ds, bd);
+				t.moistSpecial();
+				myDeck.add(t);
+				break;
+			}
+			case 1:
+			{
+				name = firePref[seed2] + suf[seed3];
+				if (myDeck.search(name, 0) && !myDeck.empty()) {
+					cout << "You've already captured " << name << endl;
+						break;
+				}
+				ThermalType t(name, hp, ds, bd);
+				t.thermalSpecial();
+				myDeck.add(t);
+				break;
+			}
+			case 2:
+			{
+				if (myDeck.search(name, 0) && !myDeck.empty()) {
+					cout << "You've already captured " << name << endl;
+						break;
+				}
+				name = brickPref[seed2] + suf[seed3];
+				BrickType t(name, hp, ds, bd);
+				t.brickSpecial(); 
+				myDeck.add(t);
+				break;
+			}
+			}
 		}
 	}
 
