@@ -1,26 +1,97 @@
 #include "header.h"
 
 void Deck::sort(char type) {
+	if (type == ('h' | 'H')) {
+		int i;
+		node* ptr;
+		node* p1;
+		node* p2;
 
-	int i;
-	node* ptr;
-	node* p1;
-	node* p2;
-
-	for (i = 0; i < size(); i++)
-	{
-		p1 = start;
-		p2 = p1->next;
-		while (p1->next != NULL) {
-			if (p1->data.healthPoints > p2->data.healthPoints) {
-				swap(p1, p2);
-				p2 = p1->next;
-			}
-			else {
-				p1 = p2;
-				p2 = p2->next;
+		for (i = 0; i < size(); i++)
+		{
+			p1 = start;
+			p2 = p1->next;
+			while (p1->next != NULL) {
+				if (p1->data.healthPoints > p2->data.healthPoints) {
+					swap(p1, p2);
+					p2 = p1->next;
+				}
+				else {
+					p1 = p2;
+					p2 = p2->next;
+				}
 			}
 		}
+	}
+	else if (type == ('d' | 'D')) {
+		int i;
+		node* ptr;
+		node* p1;
+		node* p2;
+
+		for (i = 0; i < size(); i++)
+		{
+			p1 = start;
+			p2 = p1->next;
+			while (p1->next != NULL) {
+				if (p1->data.baseDamage > p2->data.baseDamage) {
+					swap(p1, p2);
+					p2 = p1->next;
+				}
+				else {
+					p1 = p2;
+					p2 = p2->next;
+				}
+			}
+		}
+	}
+	else if (type == ('e' | 'E')) {
+		int i;
+		node* ptr;
+		node* p1;
+		node* p2;
+
+		for (i = 0; i < size(); i++)
+		{
+			p1 = start;
+			p2 = p1->next;
+			while (p1->next != NULL) {
+				if (p1->data.defenseStrength > p2->data.defenseStrength) {
+					swap(p1, p2);
+					p2 = p1->next;
+				}
+				else {
+					p1 = p2;
+					p2 = p2->next;
+				}
+			}
+		}
+	}
+	else if (type == ('n' | 'N')) {
+		int i;
+		node* ptr;
+		node* p1;
+		node* p2;
+
+		for (i = 0; i < size(); i++)
+		{
+			p1 = start;
+			p2 = p1->next;
+			while (p1->next != NULL) {
+				if (p1->data.name > p2->data.name) {
+					swap(p1, p2);
+					p2 = p1->next;
+				}
+				else {
+					p1 = p2;
+					p2 = p2->next;
+				}
+			}
+		}
+	}else{
+		cout << endl << "[---------------------------------------] " << endl;
+		cout << "| Invalid Type Entered!                 |" << endl;
+		cout << "[---------------------------------------]" << endl << endl;
 	}
 }
 
