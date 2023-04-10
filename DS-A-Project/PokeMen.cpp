@@ -12,7 +12,40 @@ PokeMen::PokeMen(string n, int health, int defenseValue, int baseDamageValue)
 }
 
 void PokeMen::writeStats(ostream& out) {
-	out <<"Name: " << name <<endl << "Health points: " << healthPoints << endl << "Defense value: " << defenseStrength << endl << "Base damage:" << baseDamage << endl << endl;
+	out << "Name: " << name << endl;
+
+	out << endl << "[---------------------------------------] " << endl;
+
+	if (healthPoints < 10) {
+		out << "| Health points: " << healthPoints << "                      |" << endl;
+	}else if (healthPoints < 100) {
+		out << "| Health points: " << healthPoints << "                     |" << endl;
+	}
+	else if (healthPoints < 1000) {
+		out << "| Health points: " << healthPoints << "                    |" << endl;
+	}
+
+	if (defenseStrength < 10) {
+		out << "| Defense Value: " << defenseStrength << "                      |" << endl;
+	}
+	else if (defenseStrength < 100) {
+		out << "| Defense Value: " << defenseStrength << "                     |" << endl;
+	}
+	else if (defenseStrength < 1000) {
+		out << "| Defense Value: " << defenseStrength << "                    |" << endl;
+	}
+
+	if (baseDamage < 10) {
+		out << "| Base damage  : " << baseDamage << "                      |" << endl;
+	}
+	else if (baseDamage < 100) {
+		out << "| Base damage  : " << baseDamage << "                     |" << endl;
+	}
+	else if (baseDamage < 1000) {
+		out << "| Base damage  : " << baseDamage << "                    |" << endl;
+	}
+
+	out << "[---------------------------------------]" << endl << endl;
 }
 
 void PokeMen::attack(PokeMen& attackedTarget, int baseDamage) {
@@ -84,9 +117,15 @@ void BrickType::brickSpecial(void) {
 	if (inc_or_dec == 1) {
 		currenthealth -= random_val;
 		sethealth(currenthealth);
+		if (currenthealth < 1) {
+			currenthealth = 1;
+		}
 	}
 	else {
 		currenthealth += random_val;
 		sethealth(currenthealth);
+		if (currenthealth > 999) {
+			currenthealth = 999;
+		}
 	}
 }
