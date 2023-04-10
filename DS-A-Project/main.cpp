@@ -45,11 +45,11 @@ int main(void) {
 			
 			PokeMen test4("Nolan", 999, 999, 999);
 			myDeck.add(test4);
-			PokeMen test3("Cameron", 1, 2, 3);
+			PokeMen test3("Cameron", 352, 100, 23);
 			myDeck.add(test3);
-			PokeMen test2("Owen", 0, 0, 0);
+			PokeMen test2("Owen", 501, 20, 78);
 			myDeck.add(test2);
-			PokeMen test1("Nader", 0, 0, 0);
+			PokeMen test1("Nader", 21, 700, 14);
 			myDeck.add(test1);
 			PokeMen test5("Wyatt", 0, 0, 0);
 			myDeck.add(test5);
@@ -106,7 +106,6 @@ int main(void) {
 			node* m;
 			int seed1 = rand() % 3, seed2 = rand() % 10, seed3 = rand() % 10;
 			int hp = rand() % 500, ds = rand() % 500, bd = rand() % 500;
-			cout << seed1 << endl;
 			switch (seed1) {
 			case 0:
 			{
