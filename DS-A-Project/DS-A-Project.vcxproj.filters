@@ -27,9 +27,6 @@
     <ClCompile Include="Deck.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PokeStack.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="sort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

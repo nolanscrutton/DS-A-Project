@@ -131,7 +131,6 @@
     <ClCompile Include="headerImplementation.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PokeMen.cpp" />
-    <ClCompile Include="PokeStack.cpp" />
     <ClCompile Include="search.cpp" />
     <ClCompile Include="sort.cpp" />
   </ItemGroup>
