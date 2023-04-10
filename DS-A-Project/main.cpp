@@ -35,22 +35,16 @@ int main(void) {
 
 		if (ch == 'b') {
 			
-			/*cout << "input stats" << endl;
-			cin >> name >>  health >> defense >> damage;
-			PokeMen p(name, health, defense, damage);
 			
-
-			myDeck.add(p);*/
-			
-			PokeMen test4("Nolan", 999, 999, 999);
+			PokeMen test4("nolan", 999, 999, 999);
 			myDeck.add(test4);
-			PokeMen test3("Cameron", 352, 100, 23);
+			PokeMen test3("cameron", 352, 100, 23);
 			myDeck.add(test3);
-			PokeMen test2("Owen", 501, 20, 78);
+			PokeMen test2("owen", 501, 20, 78);
 			myDeck.add(test2);
-			PokeMen test1("Nader", 21, 700, 14);
+			PokeMen test1("nader", 21, 700, 14);
 			myDeck.add(test1);
-			PokeMen test5("Wyatt", 0, 0, 0);
+			PokeMen test5("wyatt", 0, 0, 0);
 			myDeck.add(test5);
 		}
 
@@ -77,7 +71,6 @@ int main(void) {
 		if (ch == 's') {
 			string searchingName;
 
-			cout << "Enter the name of the object you'd like to find" << endl;
 			cout << endl << "[---------------------------------------] " << endl;
 			cout << "| Enter the name of the object you'd    |" << endl;
 			cout << "| like to find                          |" << endl;
