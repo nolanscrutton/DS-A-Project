@@ -6,7 +6,7 @@ void printLogo(int sel);
 int main(void) {
 
 	Deck myDeck;
-	char ch;
+	char ch, sortType;
 	int health, defense, damage;
 	string name;
 
@@ -14,24 +14,22 @@ int main(void) {
 
 	printLogo(1);
 
-	string waterPref[7] = { "moist", "wet", "viscous", "laminar", "gushy", "liquid", "gooey", };
-	string firePref[7] = { "pyro", "fire", "solar", "magma", "lava", "plasma", "burner" };
-	string brickPref[7] = { "rock", "brick", "granite", "sedimentary", "metamorphic", "cement", "dirt" };
-	string suf[7] = { "man", "ball", "box", "beast", "dog", "rhino", "tree" };
+	string waterPref[10] = { "moist", "wet", "viscous", "laminar", "gushy", "liquid", "gooey", "damp", "humid", "clammy"};
+	string firePref[10] = { "pyro", "fire", "solar", "magma", "lava", "plasma", "burner", "blazing", "sizzling", "thermogenic"};
+	string brickPref[10] = { "rock", "brick", "granite", "sedimentary", "metamorphic", "cement", "dirt", "hard", "stiff", "dense"};
+	string suf[10] = { "man", "ball", "box", "beast", "dog", "rhino", "tree", "dude", "noob", "saur"};
 
 	while(true) {
 		cout << endl << "[---------------------------------------] " << endl;
 		cout << "| Hit b to add a base to the deck       |" << endl;
-		cout << "| Hit m to add a moist to the deck      |" << endl;
-		cout << "| Hit t to add a thermal to the deck    |" << endl;
-		cout << "| Hit k to add a brick to the deck      |" << endl;
 		cout << "| Hit d to display the deck             |" << endl;
-		cout << "| Hit 3 to test base class              |" << endl;
-		cout << "| Hit r to remove a PokeMan             |" << endl;
+		cout << "| Hit x to remove a PokeMan             |" << endl;
 		cout << "| Hit n for number of PokeMen in deck   |" << endl;
 		cout << "| Hit s to search                       |" << endl;
-		cout << "| Hit g to sort deck                    |" << endl;
+		cout << "| Hit o to sort deck                    |" << endl;
 		cout << "| Hit c to clear deck                   |" << endl;
+		cout << "| Hit r to catch a random PokeMan       |" << endl;
+		cout << "| Hit q to touch grass :)               |" << endl;
 		cout << "[---------------------------------------]" << endl << endl;
 
 		cin >> ch;
@@ -45,51 +43,24 @@ int main(void) {
 
 			myDeck.add(p);*/
 			
-			PokeMen test4("fargus", 1, 11, 6);
+			PokeMen test4("Nolan", 999, 999, 999);
 			myDeck.add(test4);
-			PokeMen test3("dungus", 4, 5, 3);
+			PokeMen test3("Cameron", 1, 2, 3);
 			myDeck.add(test3);
-			PokeMen test2("garbonzo", 7, 8, 12);
+			PokeMen test2("Owen", 0, 0, 0);
 			myDeck.add(test2);
-			PokeMen test1("zamn", 10, 2, 9);
-
+			PokeMen test1("Nader", 0, 0, 0);
 			myDeck.add(test1);
-
-		}
-		if (ch == 'm') {
-			cout << "stats" << endl;
-			cin >> name >> health >> defense >> damage;
-			MoistType p(name, health, defense, damage);
-
-			p.moistSpecial();
-
-			myDeck.add(p);
-		}
-		if (ch == 't') {
-			cout << "stats" << endl;
-			cin >> name >> health >> defense >> damage;
-			ThermalType p(name, health, defense, damage);
-
-			p.thermalSpecial();
-
-			myDeck.add(p);
-		}
-		if (ch == 'k') {
-			cout << "stats" << endl;
-			cin >> name >> health >> defense >> damage;
-			BrickType p(name, health, defense, damage);
-
-			p.brickSpecial();
-
-			myDeck.add(p);
+			PokeMen test5("Wyatt", 0, 0, 0);
+			myDeck.add(test5);
 		}
 
-		if(ch == 'r') {
+		if(ch == 'x') {
 			if (myDeck.empty()) {
-				cout << "list is empty" << endl;
+				cout << "They're all gone" << endl << "..." << endl;
 			}
 			else {
-				myDeck.remove();
+				myDeck.remove(0);
 			}
 		}
 
@@ -97,11 +68,6 @@ int main(void) {
 			myDeck.display(cout);
 		}
 
-		if(ch == '3'){
-			MoistType x("moist pokemon", 500, 10, 50);
-			x.moistSpecial();
-			x.writeStats(cout);
-		}
 		if (ch == 'n') {
 			cout << "There are " << myDeck.size() << " PokeMen in your deck" << endl;
 		}
@@ -121,7 +87,7 @@ int main(void) {
 			cin >> searchingName;
 			myDeck.search(searchingName); 
 		}
-		if (ch == 'g')
+		if (ch == 'o')
 		{
 
 			cout << endl << "[---------------------------------------] " << endl;
@@ -136,10 +102,11 @@ int main(void) {
 
 			myDeck.sort(sortType);
 		}
-		if (ch == 'v') {
+		if (ch == 'r') {
 			node* m;
-			int seed1 = rand() % 3, seed2 = rand() % 7, seed3 = rand() % 7;
+			int seed1 = rand() % 3, seed2 = rand() % 10, seed3 = rand() % 10;
 			int hp = rand() % 500, ds = rand() % 500, bd = rand() % 500;
+			cout << seed1 << endl;
 			switch (seed1) {
 			case 0:
 			{
@@ -151,6 +118,7 @@ int main(void) {
 				MoistType t(name, hp, ds, bd);
 				t.moistSpecial();
 				myDeck.add(t);
+				cout << "You caught a Moist type PokeMan named " << name << "!" << endl;
 				break;
 			}
 			case 1:
@@ -163,21 +131,28 @@ int main(void) {
 				ThermalType t(name, hp, ds, bd);
 				t.thermalSpecial();
 				myDeck.add(t);
+				cout << "You caught a Thermal type PokeMan named " << name << "!" << endl;
 				break;
 			}
 			case 2:
 			{
+				name = brickPref[seed2] + suf[seed3];
 				if (myDeck.search(name, 0) && !myDeck.empty()) {
 					cout << "You've already captured " << name << endl;
 						break;
 				}
-				name = brickPref[seed2] + suf[seed3];
 				BrickType t(name, hp, ds, bd);
 				t.brickSpecial(); 
 				myDeck.add(t);
+				cout << "You caught a Brick type PokeMan named " << name << "!" << endl;
 				break;
 			}
 			}
+		}
+		if (ch == 'q') {
+			cout << endl << "Thanks for playing!" << endl << endl;
+			printLogo(7);
+			break;
 		}
 	}
 

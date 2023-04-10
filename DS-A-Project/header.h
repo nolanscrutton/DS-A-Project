@@ -80,7 +80,7 @@ private:
 public:
 	Deck();
 	void add(PokeMen data);
-	void remove(void);
+	void remove(bool print = 1);
 	void display(ostream& out) const;
 	bool empty() const;
 	int size(void) const;
@@ -88,18 +88,4 @@ public:
 	void del();
 	int search(string searchingName, bool print = 1);
 	void swap(node* ptr1, node* ptr2);
-};
-
-class PokeStack
-{
-private:
-
-public:
-	void display(ostream& out) const;
-	void randomCapture(ostream& out);
-	void sort(int type);
-	void search() const;
-	void add();
-	void release();
-	int size(void);
 };

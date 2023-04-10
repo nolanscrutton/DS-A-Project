@@ -116,10 +116,10 @@ void BrickType::brickSpecial(void) {
 
 	if (inc_or_dec == 1) {
 		currenthealth -= random_val;
-		sethealth(currenthealth);
 		if (currenthealth < 1) {
 			currenthealth = 1;
 		}
+		sethealth(currenthealth);
 	}
 	else {
 		currenthealth += random_val;

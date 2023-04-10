@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Deck.cpp" />
-    <ClCompile Include="headerImplementation.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PokeMen.cpp" />
     <ClCompile Include="search.cpp" />

@@ -1,5 +1,13 @@
 #include "header.h"
 
+/*  Implentation of Node Class  */
+node::node(PokeMen d) {
+	data = d;
+	next = NULL;
+	prev = NULL;
+}
+
+/*  Implementation of Deck Class  */
 Deck::Deck() {
 	start = NULL;
 	tail = NULL;
@@ -21,9 +29,10 @@ void Deck::add(PokeMen data) {
 	count++;
 }
 
-void Deck::remove() {
+void Deck::remove(bool print) {
 	if (count > 0) {
 		node* ptr = start;
+		if(!print) cout << "You killed " << ptr->data.name << "!!!!!!!! So mean!!!" << endl;
 		start = start->next;
 		count--;
 		delete ptr;
